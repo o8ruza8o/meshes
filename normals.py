@@ -9,12 +9,11 @@ filenameWnormals = 'fourn.obj'
 
 def Normalize(normals):
     normalSum = [0, 0, 0]
-    normSquared = 0
+    
     for n in normals:
-        normSquared += sum(map(operator.mul, n, n))
         normalSum = map(operator.add, normalSum, n)
-
-    norm = sqrt(normSquared)
+    
+    norm = sqrt(sum(map(operator.mul, normalSum, normalSum)))
     normalised = []
     for c in normalSum: normalised.append(c/norm)
 

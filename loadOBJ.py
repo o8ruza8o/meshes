@@ -76,11 +76,6 @@ def loadOBJtextures(filename):
                         f = map(int, face)
                         f = map(operator.add, f, [-1, -1, -1])
                         
-                        # fix this part once there are normals
-                        # for i in range(0, len(face)) :
-                        #     face[i] = face[i].split('/')
-                        #     # OBJ indexies are 1 based not 0 based hence the -1
-                        #     # convert indexies to integer
-                        #     for j in range(0, len(face[i])) : f[i][j] = int(face[i][j]) - 1
+                        # fix this part once there are normals and textures
                         faces.append(f)
 	return vertices, normals, faces
